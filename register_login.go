@@ -58,7 +58,6 @@ func Hander_longin(c *gin.Context) {
 			return
 		}
 		}//判断是否登录正确
-
 		c.Writer.WriteString("登录失败")
 		c.Abort()
 		return

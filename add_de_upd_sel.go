@@ -46,7 +46,7 @@ func main() {
 //增添
 	func add(db *sql.DB ){
 		//进行预处理
-		stmt, err := db.Prepare("insert into people value(default ,?,?)")
+		stmt, err := db.Prepare("insert into people values(default ,?,?)")
 		//新增，，？表示占位符
 		if err != nil {
 			fmt.Println("处理失败  ", err.Error())

@@ -136,7 +136,7 @@ if err!=nil{
 	defer stmt .Close()
  for  stmt.Next(){
  	var id int
- 	var address,name string
+ 	var address,name string//创建变量
  	stmt .Scan(&id,&name,&address)//顺序不要搞错
  	fmt.Println(id,name,address)
  }  //这里的stmt直接变成了rows

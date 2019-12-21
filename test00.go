@@ -103,5 +103,5 @@ func show(){
 			fmt.Println("冒菜")
 		}
 	}
-	fmt.Println("总价格： ",sum)
+	fmt.Println("总价格：",sum)
 }

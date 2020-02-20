@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration:none ;
+    }
+    .header{
+        width: 1440px;
+        height: 60px;
+        display: flex;
+        margin: auto;
+        flex-wrap:nowrap ;
+        justify-content: space-between;
+        align-content: center;
+    }
+    .bli{
+        display: flex;
+        margin-left: 30px;
+     justify-items: center ;
+        align-items: center;
+
+    }
+    .bli i{
+        margin-left: 5px;
+        font-size: 26px;
+        color: #00a1d6;
+        cursor: pointer;
+        font-style: normal;
+       font-weight: bold;
+    }
+    .bli img{
+        width: 70px;
+        height: 30px;
+    }
+    .icon{
+        position: relative;
+        display: flex;
+        align-items: center;
+       left: -500px;
+    }
+    .icon img{
+        width: 24px;
+        height: 24px;
+        vertical-align: center ;
+        margin-right: 5px;
+    }
+    .icon a{
+        font-size: 14px;
+        color: #99a2aa;
+    }
+    .user{
+        display: flex;
+        align-items: center;
+        margin-right: 100px;
+    }
+    .user img{
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+    }
+    .video{
+        width: 830px;
+        height: 284px;
+        margin: 0 auto ;
+        text-align: center ;
+    }
+    .log{
+        display: inline-block;
+        width: 200px;
+        height: 44px;
+        font-size: 16px;
+        color: #fff;
+        text-align: center ;
+        line-height: 44px;
+        margin-top: 100px;
+        background-color: #00a1d6;
+        border: none;
+    }
+    .log:hover{
+        background-color: #00a7de;
+    }
+    .video i{
+        font-style: normal;
+        color: #99a2aa;
+        font-size: 12px;
+    }
+    .introduce{
+        margin-top: 50px;
+        border: 1px solid #ccc;
+        width: 100%;
+        height: 300px;
+        color: #99a2aa;
+        font-size: 12px;
+        padding: 2px;
+    }
+    .hid{
+        display: none;
+        margin-top: 20px;
+        width: 200px;
+        height: 30px;
+    border:none;
+    }
+    .hid:hover{
+        background-color: #CCC;
+    } 
+</style>
+<body>
+<div class="header">
+
+<div class="bli">
+    <img src="./img/BILIBILI_LOGO(1).png " alt="">
+    <i>创造中心</i>
+</div>
+<div class="icon" >
+    <img src="./img/bilibili-fill.png   " alt="">
+    <a href="">主站</a>
+</div>
+<div class="user">
+    <img src="./img/9F4DF2425453A9D5964DFC55AB18C37E.jpg  " alt="">
+</div>
+</div>
+<div class="video">
+<form action="" name="file">
+    <button name="log" class="log" >上传视频</button>
+    <i>视频大小不要超过500MB</i>
+        <textarea name="int" class="introduce" placeholder="视频介绍:" ></textarea>
+<button type="submit" class="hid" >提交</button>
+</form>
+    </div>
+</body>
+</html>

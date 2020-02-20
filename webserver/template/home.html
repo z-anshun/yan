@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Title</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        border-color: #ddd;
+        color: black;
+    }
+
+    .topnav a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .topnav-back {
+        text-align: center;
+        background-color: #66ffff;
+    }
+
+    #main-back {
+        background-color: #66ffff;
+    }
+
+    #title {
+        font-size: 60px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .container {
+        padding: 16px;
+        background-color: white;
+    }
+
+    input[type=text], input[typp=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background-color: #f1f1f1;
+    }
+
+    input[type=text]:focus, input[typp=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+    .registerbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+        font-size: 20px;
+    }
+
+    .registerbtn:hover {
+        opacity: 1;
+    }
+</style>
+<body id="main-back">
+<div class="topnav">
+    <a href="#home" class="active">Home</a>
+    <a href="#news">{{.Name}}</a>
+    <a href="#about">About</a>
+</div>
+
+<div class="topnav-back" style="padding-left: 16px">
+    <h2 id="title">Welcome to MOVIEDASH</h2>
+</div>
+
+<form action="/userhome" method="post " id="regsubmit" style="width: 500px;margin:0 auto">
+
+    <div class="container">
+        <h1>Register</h1>
+        <hr>
+
+        <label for="email"><b>User name</b></label>
+        <input id="username" type="text" placeholder="Enter your name" name="username" required/>
+
+        <label for="pwd"><b>Password</b></label>
+        <input type="password " id="pwd" placeholder="Enter Password" name="pwd" required/>
+
+        <hr>
+        <p>By creating an account you agree to our<a href="#">Terms & Privacy</a>.</p>
+
+        <button id="regbtn" type="submit" class="registerbtn">Register</button>
+    </div>
+</form>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous "
+></script>
+<script type="text/javascript " src="script/home.js"></script>
+</html>

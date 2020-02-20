@@ -1,0 +1,55 @@
+.user{
+    height: 36px;
+    width: 320px;
+    display: flex;
+}
+.user li{
+    display: inline-block;
+    line-height: 36px;
+    text-align: center ;
+    margin-right: 10px;
+
+}
+.user li a{
+    color: #222;
+    font-size: 14px;
+}
+.user span img{
+    cursor: pointer ;
+    height: 36px;
+    width: 36px;
+    border-radius: 18px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.user-con{
+    cursor: pointer;
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+    display: block;
+    width: 100px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background: #FB7299;
+    border-radius: 2px;
+}
+.user-mid{
+    width: 980px;
+    margin: 0 auto;
+    display: flex;
+   align-content: center;
+    justify-content: center;
+}
+.achieve{
+    margin: 20px 0 20px 27px;
+}
+.achieve li {
+    color: #99a2aa;
+    display: inline-block;
+    margin-right: 10px;
+}
+.atten{
+    margin-left: 25px;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+</head>
+
+<link rel="stylesheet " type="text/css " href="./script/login.css "/>
+<link rel="stylesheet" href="./script/uhome.css" type="text/css">
+<body>
+<div class="login">
+    <div class="header">
+        <div class="header-left">
+            <ul>
+                <li class="bili"><a href="www.bilibili.com"><img src="./img/20200212141003.png" class="logo"/>
+                        <span style="margin-left: 70px">主站</span></a>
+                    <img src="./img/标签.png" alt="logo" class="item"/>
+                </li>
+                <li><a href="">番剧</a></li>
+                <li><a href="">游戏中心</a></li>
+                <li><a href="">直播</a></li>
+                <li><a href="">会员购</a></li>
+                <li><a href="">漫画</a></li>
+                <li><a href="">赛事</a></li>
+                <li><a href=""><img src="./img/20200212143045.png  " alt="" height="30px" width="18px"><i
+                                style="font-style: normal;">下载APP</i></a></li>
+            </ul>
+        </div>
+        <div class="search" style="width:430px ">
+            <form action="" class="search_form">
+                <input type="text" value="动漫行业的未来在哪" class="searchin"/>
+
+                <button class="btn">
+                </button>
+            </form>
+        </div>
+
+        <div class="user">
+            <span><img src="./img/backiee-120685.jpg" alt="">
+            <form action="" name="file_av">
+
+            </form>
+            </span>
+            <ul>
+                <li><a href="">大会员</a></li>
+                <li><a href="">消息</a></li>
+                <li><a href="">动态</a></li>
+                <li><a href="">收藏</a></li>
+                <li><a href="">历史创作</a></li>
+            </ul>
+        </div>
+        <span class="contribute user-con ">投稿</span>
+    </div>
+</div>
+<div class="achieve">
+    <ul>
+        <li class="">关注数</li>
+        <li class="fan"></li>
+        <li class="favour"></li>
+        <li class="trans"></li>
+    </ul>
+</div>
+<div class="user-mid">
+    <div>历史稿件</div>
+    <form action="">
+        <button></button>
+    </form>
+</div>
+<div class="atten">
+    我的关注：
+
+</div>
+
+
+</body>
+<script>
+    let obj;
+    let username = getcookie("user_name", Callback);
+
+    function getcookie(keys, callback) {
+        let arr = document.cookie.split(";");
+        for (let i = 0; i < arr.length; i++) {
+            let ass = arr[i].split("=");
+            if (ass[0].trim() == keys) {
+
+                return ass[i];
+            }
+        }
+        return false;
+    }
+
+    function Callback() {
+        $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:8000/author/" + username,
+            success: function (data) {
+                obj = data
+            }
+        });
+        document.querySelector("[class=fan]").innerText = "粉丝数:" + obj.fan;
+        document.querySelector("[class=favour]").innerText = "点赞数:" + obj.favour;
+        document.querySelector("[class=trans]").innerText = "播放量:" + obj.transmit;
+    }
+</script>
+</html>

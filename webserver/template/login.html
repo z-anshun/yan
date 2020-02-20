@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet " type="text/css " href="./script/login.css "/>
+    <link rel="stylesheet" href="./script/reg.css" type="text/css"/>
+</head>
+<body>
+<div class="login">
+    <div class="header">
+        <div class="header-left">
+            <ul>
+                <li class="bili"><a href="www.bilibili.com"><img src="./img/20200212141003.png" class="logo"/>
+                        <span style="margin-left: 70px">主站</span></a>
+                    <img src="./img/标签.png" alt="logo" class="item"/>
+                </li>
+                <li><a href="">番剧</a></li>
+                <li><a href="">游戏中心</a></li>
+                <li><a href="">直播</a></li>
+                <li><a href="">会员购</a></li>
+                <li><a href="">漫画</a></li>
+                <li><a href="">赛事</a></li>
+                <li><a href=""><img src="./img/20200212143045.png  " alt="" height="30px" width="18px"><i
+                                style="font-style: normal;">下载APP</i></a></li>
+            </ul>
+        </div>
+        <div class="search">
+            <form action="" class="search_form">
+                <input type="text" value="动漫行业的未来在哪" class="searchin"/>
+
+                <button class="btn">
+                </button>
+            </form>
+        </div>
+
+        <div class="user-login">
+            <a href="userhome.html"  >
+            <div class="logup">
+                <img src="//static.hdslb.com/images/akari.jpg"/>
+                <i style="color: #212121;font-style: normal " >登录</i>
+            </div>
+            </a>
+            <div class="login"><a href="login.html">注册</a></div>
+            <a href=""><span class="contribute">投稿</span></a>
+        </div>
+
+    </div>
+    <div class="banner">
+        <img src="//s1.hdslb.com/bfs/static/passport/static/img/rl_top.35edfde.png" alt="bilibili">
+    </div>
+    <div class="title-line">
+        <span>注册</span>
+    </div>
+</div>
+<
+<form class="register" method="post" action="main.html" enctype="multipart/form-data">
+    <div class="name">
+        <input type="text" name="user_name" placeholder="昵称(不能超过10个字)" maxlength="10" id="name"/>
+    <i></i>
+    </div>
+    <div class="pwd" style="margin-bottom: 25px">
+        <input type="password" autocomplete="off" id="pwd" name="pwd" placeholder="密码（6-16个字符组成，区分大小写)"/>
+        <i></i>
+    </div>
+    <!--<div class="pmember">
+        <span class="ch">中国大陆</span>
+        <input type="text" autocomplete="off" name="tel" placeholder="填写常用手机号">
+    </div>-->
+    <div class="yzm">
+        <div id="v_container" style="width: 200px;height: 50px;"></div>
+        <input type="text" id="code_input" value="" placeholder="请输入验证码"/>
+        <i id="err"></i>
+    </div>
+    <label class="register-agree">
+        <label class="check-box">
+            <input type="checkbox" class="agree" style="-webkit-appearance: checkbox;"/>
+        </label>
+        我已同意
+        <a href="https://www.bilibili.com/protocal/licence.html">
+            《哔哩哔哩弹幕网用户使用协议》
+        </a>
+        和
+        <a href="https://www.bilibili.com/blackboard/privacy-pc.html">
+            《哔哩哔哩隐私政策》
+        </a>
+    </label>
+    <div class="regsiterin" style="background-color: #ccc;">
+        <button class="error" type="button" id="my_button">注册</button>
+
+    </div>
+
+    <div class="direct">
+        <a href="./userhome.html">已有账号，直接登录></a>
+    </div>
+</form>
+<div class="bili-footer">
+    <ul>
+        <li>
+            <div class="tip">bilibili</div>
+            <div class="card">
+                <a href="//www.bilibili.com/blackboard/aboutUs.html">关于我们</a>
+                <a href="//www.bilibili.com/blackboard/contact.html">联系我们</a>
+                <a href="//www.bilibili.com/blackboard/join.html">加入我们</a>
+                <a href="//www.bilibili.com/blackboard/friends-links.html">友情链接</a>
+                <a href="//account.bilibili.com/account/official/home">bilibili认证</a>
+                <a href="http://ir.bilibili.com">Investor Relations</a>
+            </div>
+        </li>
+        <li>
+            <div class="tip">传送门</div>
+            <div class="card">
+                <a href="//www.bilibili.com/blackboard/help.html">帮助中心</a>
+                <a href="//www.bilibili.com/video/av120040/">高级弹幕</a>
+                <a href="//www.bilibili.com/blackboard/topic_list.html">活动专题页</a>
+                <a href="//www.bilibili.com/v/copyright/intro">侵权申诉</a>
+                <a href="//www.bilibili.com/blackboard/x/act_list/">活动中心</a>
+                <a href="http://link.acg.tv">用户反馈论坛</a>
+                <a href="//space.bilibili.com/6823116#/album">壁纸站</a>
+                <a href="//www.bilibili.com/blackboard/activity-S1jfy69Jz.html">名人堂</a>
+                <a href="//www.bilibili.com/basc">专车号服务中心</a>
+            </div>
+        </li>
+        <li>
+            <div class="card right">
+                <div class="model-app">
+                    <span>官方微信</span>
+                </div>
+                <div class="footer-webio">
+                    <span>新浪微博</span>
+                </div>
+                <div class="footer-chat">
+                    <span>客户端下载</span>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script src="./script/verify.js "></script>
+<script>
+
+</script>
+
+</body>
+</html>

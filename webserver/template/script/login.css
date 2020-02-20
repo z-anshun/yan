@@ -1,0 +1,557 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.header {
+    padding: 10px 24px;
+    line-height: 30px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+.header-left ul li {
+    display: inline-block;
+    padding: 3px 0;
+    white-space: nowrap;
+}
+
+.header-left {
+    position: relative;
+
+}
+
+.header-left ul li a {
+    padding-left: 10px;
+    font-size: 14px;
+    height: 30px;
+    text-decoration: none;
+    border: none;
+    color: #212121;
+}
+
+.header-left ul .bili {
+    position: relative;
+    /*background-color: red;*/
+    width: 130px;
+    height: 30px;
+    margin: 0 3px;
+    text-align: center;
+}
+
+.header-left ul .bili .logo {
+    position: absolute;
+    width: 70px;
+    height: 30px;
+    left: 0;
+}
+
+.header-left ul .bili .item {
+    position: absolute;
+    width: 11px;
+    height: 20px;
+    right: 0;
+    top: 7px
+}
+
+.header-left img {
+    vertical-align: middle;
+}
+
+.header-left li a:hover {
+    color: #00A1D6;
+}
+
+.search {
+    position: relative;
+
+    height: 36px;
+    width: 500px;
+    overflow: hidden;
+}
+
+.search .searchin {
+    margin-left: 15px;
+    height: 34px;
+    color: #999;
+    font-size: 14px;
+    line-height: 34px;
+    border: none;
+    background-color: #F4F4F4;
+
+
+}
+
+.search .search_form {
+
+    height: 36px;
+    width: 100%;
+    background-color: #F4F4F4;
+    border: 1px solid #E4E4E4;
+    left: 0;
+}
+
+.search .btn {
+    position: absolute;
+    right: 0;
+    border: none;
+
+    width: 48px;
+    height: 36px;
+cursor: pointer ;
+    background: url("../img/放大镜(2).png ") no-repeat ;
+    background-size: 16px 20px;
+    background-position:center center ;
+    background-color: #E7E7E7;
+ }
+.search .btn:hover{
+    background-image: url("../img/放大镜(1).png");
+}
+
+.user-login {
+    position: relative;
+    width: 231px;
+    height: 36px;
+    color: #212121;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 36px;
+}
+
+.user-login .logup {
+    width: 65px;
+    height: 32px;
+    position: absolute;
+
+}
+
+.user-login img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
+    border: 1px solid #c0c0c0;
+    vertical-align: middle;
+
+}
+
+.user-login .login {
+    position: absolute;
+    left: 70px;
+    width: 28px;
+    height: 32px;
+}
+
+.user-login .login a {
+    color: #212121;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.user-login .login a:hover {
+    color: #00A1D6;
+}
+
+.user-login .contribute {
+    position: absolute;
+    right: 0;
+    width: 100px;
+    height: 36px;
+    background-color: #FB7299;
+    color: white;
+    border-radius: 2px;
+}
+
+.banner {
+    height: 86px;
+    background-color: #00a0d8;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title-line {
+    width: 980px;
+    height: 28px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.title-line span {
+    padding: 0 20px;
+    font-size: 38px;
+    line-height: 56px;
+    width: 116px;
+    height: 50px;
+    background-color: white;
+}
+
+.login-box {
+    display: flex;
+    margin: 0 auto;
+    width: 980px;
+    height: 367px;
+}
+
+.login-box .login-left {
+    position: relative;
+
+    width: 489px;
+}
+
+.login-box .tv-icon {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 160px;
+    top: 10px;
+    background-image: url("../img/20200212175902.png  ");
+    background-size: 100% 100%;
+}
+
+.login-box .qrcode-box {
+    background-image: url("../img/20200213153812.png");
+    background-size: 100% 100%;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    position: absolute;
+    left: 160px;
+    top: 80px
+}
+
+.login-box .qrcode-tips {
+    position: relative;
+    padding-top: 72px;
+    width: 480px;
+    height: 192px;
+}
+
+.login-box .qrcode-tips .hid {
+    float: left;
+    z-index: 10;
+    position: absolute;
+    left: 50%;
+    width: 480px;
+    height: 200px;
+    margin-top: -52px;
+    margin-left: -240px;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity .5s
+}
+
+.login-box .qrcode-tips .hid:hover {
+    opacity: 1;
+}
+
+.login-box .qrcode-footer {
+    margin-top: -40px;
+    width: 480px;
+    height: 155px;
+    background: url(//s1.hdslb.com/bfs/static/passport/static/img/2233login.af9c53d.png) 0 -7px no-repeat;
+}
+
+.qrcode-footer .text-status {
+    padding-top: 20px;
+    text-align: center;
+    color: #222;
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.qrcode-footer .text-app {
+    text-align: center;
+    color: #717171;
+    font-size: 14px;
+}
+
+.qrcode-footer a {
+
+    color: #00a1d6;
+}
+
+.line {
+    float: left;
+    border-right: 1px solid #ddd;
+    height: 300px;
+    margin-top: 28px
+}
+
+.login-box .login-right {
+    width: 490px;
+    float: left;
+    padding-left: 54px;
+}
+
+.login-box .input-box {
+
+    width: 414px;
+    margin-top: 50px;
+}
+
+.input-box .type-tap {
+    display: flex;
+    height: 18px;
+    width: 414px;
+    cursor: pointer;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.login-up {
+    position: relative;
+}
+.input-up i{
+font-style: normal;
+
+}
+.items {
+    width: 388px;
+    border: 1px solid #ddd;
+    color: #aaa;
+    font-size: 14px;
+    padding: 10px;
+    height: 18px;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+.remember {
+
+    display: flex;
+    align-items: center;
+}
+
+.check-box {
+    display: inline-block;
+    width: 414px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #717171;
+}
+
+.check {
+    float: left;
+    display: inline-block;
+    margin-bottom: -2px;
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.check-box span {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.check-box a {
+    display: inline-block;
+    text-decoration: none;
+    color: #00a1d6;
+    float: right;
+    margin-right: 10px;
+}
+
+.button-box {
+    margin: 10px 0;
+}
+
+.btn-login {
+    display: inline-block;
+    border: 1px solid #0381aa;
+    color: #fff;
+    background-color: #00a7de;
+    text-decoration: none;
+    width: 184px;
+    height: 36px;
+    border-radius: 2px;
+    line-height: 38px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.btn-login:hover {
+    background-color: skyblue;
+}
+
+.btn-reg:hover {
+    background-color: #f7f7f7;
+}
+
+.btn-reg {
+    display: inline-block;
+    margin-left: 34px;
+    color: #555;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    width: 184px;
+    height: 36px;
+    border-radius: 2px;
+    line-height: 38px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.sns {
+    display: inline-block;
+    height: 18px;
+    font-size: 14px;
+
+}
+
+.sns img {
+    vertical-align: middle;
+}
+
+.sns .weibo {
+    text-decoration: none;
+    color: #717171;
+    margin-right: 8px;
+
+}
+
+.sns .qq {
+    text-decoration: none;
+    color: #717171;
+}
+
+.deal {
+    margin: 24px auto 0;
+    width: 980px;
+    font-size: 12px;
+    color: #99a2aa;
+    text-align: center;
+    line-height: 16px;
+}
+
+.deal a {
+
+    color: #00a1d6;
+}
+
+.bili-footer {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 112px;
+    padding-top: 20px;
+    color: #99a2aa;
+    text-align: center;
+    font-size: 12px;
+    align-content: center;
+    justify-content: center;
+}
+
+.bili-footer li {
+    display: inline-block;
+    padding-right:40px;
+    line-height: 1;
+    width: 400px;
+    height: 122px
+}
+
+.bili-footer li:nth-of-type(2) {
+    padding:0 40px ;
+    border-right: 1px solid rgba(0,0,0,.1);
+    border-left: 1px solid rgba(0,0,0,.1);
+}
+
+.tip {
+    font-size: 16px;
+    float: left;
+    margin-left: 18px;
+    margin-bottom: 16px;
+}
+
+.card {
+    float: left;
+}
+
+.card a {
+    color: #222;
+    display: inline-block;
+    font-size: 14px;
+    width: 120px;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.card a:hover {
+    color: #00a7de;
+}
+.right{
+    padding-right: 0;
+    padding-left: 40px;
+    display: flex;
+    width: 100%;
+    height:122px ;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+.right div{
+    margin: 0 15px;
+    display: inline-block;
+}
+.right div:hover{
+    cursor: pointer ;
+}
+.model-app{
+    position: relative;
+    margin-left: 11px;
+    width: 60px;
+    height: 60px;
+    background-image: url("../img/下载.png");
+    background-size: 100% 100%;
+}
+.footer-webio {
+    position: relative;
+    margin-left: 11px;
+    width: 60px;
+    height: 60px;
+    background-image: url("../img/微博.png");
+    background-size: 100% 100%;
+}
+.footer-chat {
+    position: relative;
+    margin-left: 11px;
+    width: 60px;
+    height: 60px;
+    background-image: url("../img/微信.png");
+    background-size: 100% 100%;
+}
+.right span{
+    position: absolute;
+    width: 82px;
+    height: 14px;
+    bottom: -18px;
+    left: -11px;
+    text-align: center;
+    line-height: 14px;
+   font-size: 14px;
+    color: #222;
+}

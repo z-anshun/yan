@@ -39,7 +39,7 @@ func Register(c *gin.Context) {
 	first_work.DB.Create(&u)
 
 	token := j.CreatJwt(u.Name, int(u.ID))
-	defer first_work.DB.Close()
+	
 	c.JSON(200,gin.H{
 		"token":token,
 	} )
@@ -61,7 +61,7 @@ func Login(c *gin.Context) {
 		rsp.CheckNoOne(c)
 		return
 	}
-	defer first_work.DB.Close()
+	
 	rsp.Ok(c, "user login")
 }
 
@@ -79,7 +79,7 @@ func UserMsg(c *gin.Context) {
 		rsp.UserMesErr(c, "get user message error from db")
 		return
 	}
-	defer first_work.DB.Close()
+	
 	c.JSON(200, u)
 }
 
@@ -106,14 +106,14 @@ func UpdateMsg(c *gin.Context) {
 			return
 		}
 	}
-	e := first_work.DB.Where("name=?", name).First(&u).Model(&u).Update(key, value).Error
+		e := first_work.DB.Table("users").Where("name=?", name).Update(key, value).Error
 	if e != nil {
 		c.JSON(401,
 			gin.H{"code": "009",
 				"message": "update error"})
 	}
 
-	defer first_work.DB.Close()
+	
 	rsp.Ok(c, "update success")
 
 }

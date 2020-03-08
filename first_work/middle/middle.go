@@ -19,7 +19,8 @@ func MiddleWare(c *gin.Context) {
 		return
 	}
 	token := auth[7:]
-	uid, name, err := jwt.CheckToken(token)
+	j:=jwt.NewJwt()
+	uid, name, err := j.CheckToken(token)
 	if err != nil {
 		rsp.TokenError(c)
 		c.Abort()
@@ -31,3 +32,4 @@ func MiddleWare(c *gin.Context) {
 	return
 
 }
+

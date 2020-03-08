@@ -21,7 +21,7 @@ type User struct {
 
 func Register(c *gin.Context) {
 	var f UserForm
-
+	j:=jwt.NewJwt()
 	if err := c.ShouldBindJSON(&f); err != nil {
 		rsp.ReadFormErr(c)
 		return
@@ -38,9 +38,11 @@ func Register(c *gin.Context) {
 
 	first_work.DB.Create(&u)
 
-	token := jwt.CreatJwt(u.Name, int(u.ID))
+	token := j.CreatJwt(u.Name, int(u.ID))
 	defer first_work.DB.Close()
-	rsp.Ok(c, "user register success\n"+token)
+	c.JSON(200,gin.H{
+		"token":token,
+	} )
 	return
 
 }

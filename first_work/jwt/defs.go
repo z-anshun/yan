@@ -16,3 +16,9 @@ type PlayLoad struct {
 	Id       int    `json:"id"`
 }
 
+type Jwt struct {
+	Header
+	PlayLoad
+	Signature string
+}
+

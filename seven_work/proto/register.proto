@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package  proto;
+message Users{
+  string name=1;
+  string passwd=2;
+}
+
+
+message ResponseMsg{
+  string status = 1;
+}
+
+message UpdateInfor{
+  Users v = 1;
+  int32 code = 2;
+  string str = 3;
+}
+
+service Register{
+  rpc LoginName(stream Users) returns(stream ResponseMsg);//登录
+  rpc Reg(stream Users)returns(stream ResponseMsg);//注册
+  rpc   Update(stream UpdateInfor)returns(stream ResponseMsg);                               //修改
+}

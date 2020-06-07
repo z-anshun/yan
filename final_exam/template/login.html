@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+
+<style>
+
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+
+    }
+
+    p#p1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    p#p1 > img {
+        height: 100%;
+        width: 100%;
+        border: 0;
+    }
+
+    #login-box .button {
+        width: 180px;
+        height: 25px;
+        font-size: 20px;
+        font-weight: 700;
+        color: white;
+        background-image: linear-gradient(to right, #a8caba, #5d4157 100%);
+        border: 0;
+        margin-top: 25px;
+        border-radius: 2px;
+        line-height: 25px;
+    }
+
+    #login-box {
+        background-color: #ffffff01;
+        flex-wrap: wrap;
+        text-align: center;
+        width: 500px;
+        height: 100%;
+        margin: auto;
+        margin-top: 200px;
+
+
+    }
+
+    .item {
+
+
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+
+    }
+
+    .item input {
+        width: 400px;
+        height: 25px;
+        background-color: #ffffff00;
+        border: none;
+        border-bottom: 2px solid white;
+        margin-top: 5px;
+        color: black;
+        font-size: 14px;
+        fill-opacity: 10;
+    }
+
+    form {
+        background: #ffffff00;
+        height: 100px;
+        width: 400px;
+        margin-left: 50px;
+        align-content: center;
+    }
+</style>
+<body>
+<p id="p1"><img
+            src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1584865638440&di=e55dc085416a4cb6421a4b6d6abfb947&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F96e1782d2be8b64e42f40ae5f4dd79e059326fe8.jpg"
+            alt="雷姆"></p>
+<div id="login-box">
+    <h1>Login</h1>
+
+    <form action="http://101.201.140.26/creatroom.html" enctype="multipart/form-data">
+        <div class="item">
+            <i class="" aria-hidden="true"></i>
+            <input name="name" type="text" placeholder="Username" id="name"/>
+        </div>
+
+        <div class="item">
+            <i class="" aria-hidden="true"></i>
+            <input type="password" placeholder="PossWord" id="password"/>
+        </div>
+        <div>
+            <div>
+                <input id="login" class="button" type="button" value="登录">
+            </div>
+            <div>
+                <input id="register" class="button" type="button" value="注册">
+            </div>
+        </div>
+    </form>
+
+
+</div>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    var cookie = {
+        set:function(key,val,time){//设置cookie方法
+            var date=new Date(); //获取当前时间
+            var expiresDays=time;  //将date设置为n天以后的时间
+            date.setTime(date.getTime()+expiresDays*24*3600*1000); //格式化为cookie识别的时间
+            document.cookie=key + "=" + val +";expires="+date.toGMTString();  //设置cookie
+        },
+        get:function(key){//获取cookie方法
+            /*获取cookie参数*/
+            var getCookie = document.cookie.replace(/[ ]/g,"");  //获取cookie，并且将获得的cookie格式化，去掉空格字符
+            var arrCookie = getCookie.split(";")  //将获得的cookie以"分号"为标识 将cookie保存到arrCookie的数组中
+            var tips;  //声明变量tips
+            for(var i=0;i<arrCookie.length;i++){   //使用for循环查找cookie中的tips变量
+                var arr=arrCookie[i].split("=");   //将单条cookie用"等号"为标识，将单条cookie保存为arr数组
+                if(key==arr[0]){  //匹配变量名称，其中arr[0]是指的cookie名称，如果该条变量为tips则执行判断语句中的赋值操作
+                    tips=arr[1];   //将cookie的值赋给变量tips
+                    break;   //终止for循环遍历
+                }
+            }
+            return tips;
+        }
+    }
+    function tojson(str){
+      let s=str.split("}")
+        let k=s.length
+
+        if(k==2){
+            let j=JSON.parse(s[0]+"}")
+
+            if(j.Code=="000"){
+                return true
+            }else{
+                return j.Message
+            }
+        }else {
+            for (let i=0;i<k-1;i++){
+                let j=JSON.parse(s[i]+"}")
+
+                if(j.Code=="000") {
+                    return true
+                }
+            }
+            return false
+        }
+    }
+    $('#login').click(function (e) {
+        //阻止默认
+        var e = e || window.event;
+        e.preventDefault();
+
+
+        let password = $('#password').val().trim()
+        let name = $('#name').val().trim()
+
+        $.ajax({
+            type: "POST",
+            url: "http://101.201.140.26:8080/user/login",
+            data: {"name": name, "password": password},
+            dataType: JSON,
+            success: function (e) {
+                //$("form").submit()
+                console.log(e)
+
+            },
+
+            error:function(e){
+                //let r=JSON.parse(e.responseText)
+                let r=e.responseText
+                let s=tojson(r)
+                if(s===true){
+                    cookie.set("name",name,1)
+                    $("form").submit()
+                }else if(s!=false){
+                    alert(s)
+                }else{
+                    alert("登录失败")
+                }
+            },
+            timeout: 1000,
+        });
+
+    })
+    $('#register').click(function (e) {
+        //阻止默认
+        var e = e || window.event;
+        e.preventDefault();
+
+
+        let password = $('#password').val().trim()
+        let name = $('#name').val().trim()
+
+        $.ajax({
+            type: "POST",
+            url: "http://101.201.140.26:8080/user/register",
+            data: {"name": name, "password": password},
+            dataType: JSON,
+            success: function (data) {
+                console.log(data)
+                //$("form").submit()
+            },
+                error:function(e){
+                    //let r=JSON.parse(e.responseText)
+                    console.log(e)
+                    let r=e.responseText
+                    let s=tojson(r)
+                    if(s===true){
+                        cookie.set("name",name,1)
+                       $("form").submit()
+                    }else if(s!=false){
+                        alert(s)
+                    }else{
+                        alert("注册失败")
+                    }
+                },
+
+            timeout: 1000,
+        });
+
+    })
+</script>
+</body>
+</html>

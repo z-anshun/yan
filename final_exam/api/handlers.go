@@ -192,7 +192,7 @@ func WsPage(c *gin.Context) {
 		return
 	}
 
-	msg := model.Message{Name: cookie, Socket: conn, RoomId: id, Exit: false}
+	msg := model.Message{Name: cookie, Socket: conn, RoomId: id, Exit: false,Send:make(chan []byte)}
 	//如果没找打房间
 	_, ok := model.UserMessages[id]
 	if !ok {

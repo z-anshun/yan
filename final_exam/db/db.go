@@ -18,7 +18,7 @@ func init() {
 	e := open.HasTable(&model.User{})
 	if !e {
 
-		err := open.AutoMigrate(&model.User{}).Error
+		err := open.Create(&model.User{}).Error
 		if err != nil {
 			log.Println("Creat Table error")
 		}
@@ -26,7 +26,7 @@ func init() {
 	e = open.HasTable(&model.FileRecord{})
 	if !e {
 
-		err := open.AutoMigrate(&model.FileRecord{}).Error
+		err := open.Create(&model.User{}).Error
 		if err != nil {
 			log.Println("Creat Table error")
 		}

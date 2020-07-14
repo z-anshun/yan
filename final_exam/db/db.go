@@ -26,7 +26,7 @@ func init() {
 	e = open.HasTable(&model.FileRecord{})
 	if !e {
 
-		err := open.Create(&model.User{}).Error
+		err := open.Create(&model.FileRecord{}).Error
 		if err != nil {
 			log.Println("Creat Table error")
 		}
